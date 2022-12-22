@@ -5,21 +5,19 @@
     <title>My Page</title>
   </head>
   <body>
-    <!-- Your content goes here -->
-    <form action="" class="book-data">
-        <input type="text" id="name" name="name"><br>
-        <button type="submit">Submit</button>
-        
-        <input type="text" id="name" name="name"><br>
-        <button type="submit">Submit</button>
-        
-        <input type="text" id="name" name="name"><br>
-        <button type="submit">Submit</button>
-        
-        <input type="text" id="name" name="name"><br>
-        <button type="submit">Submit</button>
-        
+    <form id="myForm">
+      <label for="name">Name:</label><br>
+      <input type="text"  name="name"><br>
+      <label>Author:</label><br>
+      <input type="text" name="author"><br><br>
+      <label>Pages</label><br>
+      <input type="text" name="pages"><br><br>
+      <label >Status:</label><br>
+      <input type="text" name="status"><br><br>
+      
+      <input type="submit" value="Submit">
     </form>
+    
     <div data-card="" id="main-frame"></div>
     <script src="constructors.js"></script>
   </body>

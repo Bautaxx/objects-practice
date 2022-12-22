@@ -8,25 +8,34 @@ function Book(title,author,pages,status){
         return (this.title + 'by' + this.author + this.pages + this.status)
     }
 }
-function addBook(book){
-    books.push(book);
+
+function addBook(toAdd){
+    books.push(toAdd);
+    addDisplay(books)
 }
+
+
 
 // Get the <ul> element
 const frame = document.getElementById("main-frame");
-
-books[0] = new Book('Harry','Rowling',256,'not read yet')
-
-// Loop through the elements of the array
-for (let i = 0; i < books.length; i++) {
-  // Create a new <li> element
-  let card = document.createElement("div");
-  
-  // Set the text content of the <li> element to the current array element
-  card.innerText = books[i].info();
-  
-  // Append the <li> element to the <ul> element
-  frame.appendChild(card);
+//Creates a div with the book information
+function addDisplay(){
+    let card = document.createElement("div");
+    card.innerText = books[books.length - 1].info();
+    frame.appendChild(card);
 }
 
 
+const form = document.querySelector("form");
+form.addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent the form from being submitted
+  let bookName = form.elements.name.value
+  let author = form.elements.author.value
+  let pages = form.elements.pages.value
+  let status = form.elements.status.value
+
+  bookToAdd = new Book(bookName,author,pages,status) //Replace that info with the submited data
+  addBook(bookToAdd)
+
+  console.log("The form was submitted!");
+});
